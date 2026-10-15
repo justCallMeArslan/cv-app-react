@@ -1,3 +1,5 @@
-export default function App() {
+import PersonalInfoForm from "./components/PersonalInfoForm";
 
+export default function App() {
+    <PersonalInfoForm />
 }
