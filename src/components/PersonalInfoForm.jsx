@@ -5,7 +5,8 @@ export default function PersonalInfoForm() {
 
     const [isPhoto, setIsPhoto] = useState(null);
 
-    function handleAddPhoto(){
+    // modal + handlers for add and skip
+    function handleAddPhoto(){ 
         setIsPhoto()
     }
    
