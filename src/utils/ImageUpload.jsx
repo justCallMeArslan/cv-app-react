@@ -24,7 +24,7 @@ export default function ImageUpload() {
             preview
         })
 
-        event.target.value = ""; // allows to reselect the same file again, reseting
+        e.target.value = ""; // allows to reselect the same file again, reseting
     }
 
     return (
@@ -37,7 +37,7 @@ export default function ImageUpload() {
                         className="image-preview"
                     />) : (
                     <span className="plus">
-                        +
+                        Click on {<br />} + {<br />} to upload photo
                     </span>
                 )}
 
@@ -53,9 +53,6 @@ export default function ImageUpload() {
                 <div className="actions">
                     <button onClick={() => setImage(null)}>
                         Remove
-                    </button>
-                    <button onClick={() => window.print()}>
-                        Print
                     </button>
                 </div>
             )}
