@@ -13,18 +13,15 @@ export default function ImageUpload() {
 
     function hnadleImageChange(e) {
         const file = e.target.files?.[0];
-
         if (!file || !file.type.startsWith("image/")) return; // MIME validation
 
         const preview = URL.createObjectURL(file);
-
-
         setImage({
             file,
             preview
         })
 
-        e.target.value = ""; // allows to reselect the same file again, reseting
+        e.target.value = ""; // allows to reselect the same file again, reseting value
     }
 
     return (
