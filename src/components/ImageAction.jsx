@@ -28,8 +28,8 @@ export default function ImageAction() {
                             Would you like to add a photo to you CV application?
                         </h2>
                         <p>
-                            Depending on country of application, photo may become
-                            a good choice or very bad one. <br />
+                            Depending on country of application, photo may or not
+                            be required. <br />
                             Please double check before continuing.
                         </p>
 
