@@ -14,9 +14,7 @@ export default function ImageAction() {
         setIsPhoto(false)
     }
 
-
     return (
-
         <div className="personal-info-form">
             {isPhoto === null && (
                 <div className="modal-overlay-personal">
@@ -32,7 +30,6 @@ export default function ImageAction() {
                             be required. <br />
                             Please double check before continuing.
                         </p>
-
                         <div className="modal-actions">
                             <button type="button"
                                 className="yes-button"
@@ -49,7 +46,6 @@ export default function ImageAction() {
             )}
 
             {isPhoto === true && <ImageUpload />}
-
 
         </div>
     )
