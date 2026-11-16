@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./ImageUpload.css"
 
 export default function ImageUpload() {
     const [image, setImage] = useState(null);
@@ -48,9 +49,15 @@ export default function ImageUpload() {
 
             {image && (
                 <div className="actions">
+                    <span>
+                        Click on image to choose another one or
+                    </span>
                     <button onClick={() => setImage(null)}>
                         Remove
                     </button>
+                    <span>
+                        to delete
+                    </span>
                 </div>
             )}
         </div>

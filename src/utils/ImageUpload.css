@@ -1,0 +1,5 @@
+.actions {
+    display: flex;
+    gap: 0.28em;
+    align-items: baseline;
+}
