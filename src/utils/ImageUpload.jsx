@@ -1,32 +1,35 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./ImageUpload.css"
 
-export default function ImageUpload() {
+export default function ImageUpload({ photoFormat }) {
     const [image, setImage] = useState(null);
-
-    useEffect(() => {
-        if (!image) {
-            return
-        } else {
-            return () => URL.revokeObjectURL(image.preview);
-        };
-    }, [image]);
 
     function hnadleImageChange(e) {
         const file = e.target.files?.[0];
+        e.target.value = ""; // allows to reselect the same file again, reseting value
+
+
         if (!file || !file.type.startsWith("image/")) return; // MIME validation
+
+        if (image) { //clean up the previous preview
+            URL.revokeObjectURL(image.preview);
+        }
 
         const preview = URL.createObjectURL(file);
         setImage({
             file,
             preview
-        })
-
-        e.target.value = ""; // allows to reselect the same file again, reseting value
+        });
+    }
+    function handleRemoveImage() {
+        if (image) {
+            URL.revokeObjectURL(image.preview);
+        }
+        setImage(null);
     }
 
     return (
-        <div className="image-upload">
+        <div className={`image-upload photo-${photoFormat}`}>
             <label className="upload-box">
                 {image ? (
                     <img
@@ -50,13 +53,18 @@ export default function ImageUpload() {
             {image && (
                 <div className="actions">
                     <span>
-                        Click on image to choose another one or
+                        Click on the image to pick another one.
                     </span>
-                    <button onClick={() => setImage(null)}>
+                    <span>
+                        Click on
+                    </span>
+                    <button
+                        type="button"
+                        onClick={handleRemoveImage}>
                         Remove
                     </button>
                     <span>
-                        to delete
+                        to delete it.
                     </span>
                 </div>
             )}
