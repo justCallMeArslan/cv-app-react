@@ -32,7 +32,7 @@ export default function ImageAction() {
                             Would you like to add a photo to you CV application?
                         </h2>
                         <p>
-                            Photo requirements vary by countery. <br />
+                            Photo requirements vary by country. <br />
                             Please check the requirements for your application.
                         </p>
                         <div className="modal-actions">
@@ -62,7 +62,7 @@ export default function ImageAction() {
                         aria-labelledby="format-title"
                     >
                         <h2 id="format-title">
-                            Choose your photo format
+                            Choose your photo format.
                         </h2>
                         <p>
                             Select the format for your application.
@@ -75,7 +75,7 @@ export default function ImageAction() {
                                     handleFormatSelect("int")
                                 }
                             >
-                                Internationa/EU
+                                International/EU
                                 <span> 35 x 45 mm</span>
                             </button>
                             <button
@@ -93,7 +93,7 @@ export default function ImageAction() {
                 </div>
             )}
 
-            {isPhoto === true && photoFormat !== null && ( //render with selected format
+            {isPhoto === true && photoFormat !== null && ( // render with selected format
                 <ImageUpload photoFormat={photoFormat} />)}
         </div>
     )
