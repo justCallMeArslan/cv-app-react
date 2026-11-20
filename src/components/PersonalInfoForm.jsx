@@ -1,10 +1,12 @@
 import { useState } from "react";
+import "./PersonalInfoForm.css"
 
 
 
 function Input({ className, name, type, value, onChange }) {
     return (
         <input
+            id={name}
             className={className}
             type={type}
             name={name}
@@ -21,7 +23,7 @@ export default function PersonalInfoForm() {
         lastName: "",
         email: "",
         phone: "",
-        socialNet: ""
+        linkedIn: ""
     });
     const fullName = personalInfo.firstName + " " + personalInfo.lastName;
 
@@ -34,56 +36,64 @@ export default function PersonalInfoForm() {
 
 
     return (
-        <div>
+        <div className="personal-info-div">
 
-            <h1>{fullName}</h1>
+            <div class="print-group">
+                <h1>{fullName}</h1>
+                <p> Email: {personalInfo.email}</p>
+                <p> Phone: {personalInfo.phone}</p>
+                <p> LinkedIn: {personalInfo.linkedIn}</p>
+            </div>
 
-            <Input
-                className="inputPersonalInfo"
-                name="firstName"
-                type="text"
-                value={personalInfo.firstName}
-                onChange={handlePersonalInfo}
-            />
+            <div className="input-group">
+                <label htmlFor="firstName">First name:</label>
+                <Input
+                    className="input-field"
+                    name="firstName"
+                    type="text"
+                    value={personalInfo.firstName}
+                    onChange={handlePersonalInfo}
+                />
 
-            <Input
-                className="inputPersonalInfo"
-                name="lastName"
-                type="text"
-                value={personalInfo.lastName}
-                onChange={handlePersonalInfo}
-            />
+                <label htmlFor="lastName">Last name:</label>
+                <Input
+                    className="input-field"
+                    name="lastName"
+                    type="text"
+                    value={personalInfo.lastName}
+                    onChange={handlePersonalInfo}
+                />
 
-            <p>{personalInfo.email}</p>
+                <label htmlFor="email">Email:</label>
+                <Input
+                    className="input-field"
+                    name="email"
+                    type="email"
+                    value={personalInfo.email}
+                    onChange={handlePersonalInfo}
+                />
 
-            <Input
-                className="inputPersonalInfo"
-                name="email"
-                type="email"
-                value={personalInfo.email}
-                onChange={handlePersonalInfo}
-            />
+                <label htmlFor="phone">Phone:</label>
+                <Input
+                    className="input-field"
+                    name="phone"
+                    type="tel"
+                    value={personalInfo.phone}
+                    onChange={handlePersonalInfo}
+                />
 
-            <p>{personalInfo.phone}</p>
+                <label htmlFor="linkedIn">LinkedIn:</label>
+                <Input
+                    className="input-field"
+                    name="linkedIn"
+                    type="text"
+                    value={personalInfo.linkedIn}
+                    onChange={handlePersonalInfo}
+                />
+            </div>
 
-
-            <Input
-                className="inputPersonalInfo"
-                name="phone"
-                type="tel"
-                value={personalInfo.phone}
-                onChange={handlePersonalInfo}
-            />
-
-            <p>{personalInfo.socialNet}</p>
-
-            <Input
-                className="inputPersonalInfo"
-                name="socialNet"
-                type="text"
-                value={personalInfo.socialNet}
-                onChange={handlePersonalInfo}
-            />
         </div>
     )
 }
+
+
