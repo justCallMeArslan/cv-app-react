@@ -38,12 +38,14 @@ export default function PersonalInfoForm() {
     return (
         <div className="personal-info-div">
 
-            <div class="print-group">
-                <h1>{fullName}</h1>
-                <p> Email: {personalInfo.email}</p>
-                <p> Phone: {personalInfo.phone}</p>
-                <p> LinkedIn: {personalInfo.linkedIn}</p>
-            </div>
+            <section class="print-group" aria-labelledby="persoanl-info-heading">
+                <header>
+                    <h1>{fullName}</h1>
+                    <p> Email: {personalInfo.email}</p>
+                    <p> Phone: {personalInfo.phone}</p>
+                    <p> LinkedIn: {personalInfo.linkedIn}</p>
+                </header>
+            </section>
 
             <div className="input-group">
                 <label htmlFor="firstName">First name:</label>
